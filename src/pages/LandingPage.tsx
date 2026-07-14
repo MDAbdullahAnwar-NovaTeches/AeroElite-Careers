@@ -372,19 +372,15 @@ export default function AeroEliteCareers() {
             paddingRight: "clamp(20px, 5vw, 64px)",
           }}
         >
-          <div
-            className="playfair"
+          <img
+            src="https://dvaviation.com/dv-aviation-logo.svg"
+            alt="DV Aviation Logo"
             style={{
-              fontSize: "clamp(22px, 4vw, 32px)",
-              lineHeight: 1.1,
-              color: "#c0c6da",
-              fontWeight: 500,
-              letterSpacing: "-0.02em",
-              textAlign: "center",
+              height: "50px",
+              width: "auto",
+              maxWidth: "200px",
             }}
-          >
-            AeroElite Careers
-          </div>
+          />
         </div>
       </motion.nav>
 
@@ -1027,7 +1023,7 @@ export default function AeroEliteCareers() {
                   We don't just transport passengers; we create memories. Seeing a child's face light up at 30,000 feet is the highlight of my day.
                 </h3>
                 <p className="inter" style={{ fontSize: "18px", lineHeight: "28px", color: "#475569", marginBottom: "32px" }}>
-                  Lead Flight Attendant Elena Russo discusses the art of bespoke service and the global community she's built within AeroElite.
+                  Lead Flight Attendant Elena Russo discusses the art of bespoke service and the global community she's built within DVAVIATION.
                 </p>
                 <div
                   className="inter"
@@ -1204,7 +1200,7 @@ export default function AeroEliteCareers() {
                 Join the Elite.
               </h2>
               <p className="inter" style={{ color: "#64748b", maxWidth: "520px", marginTop: "12px" }}>
-                Hear from those who've made AeroElite their home.
+                Hear from those who've made DVAVIATION their home.
               </p>
             </div>
             <div style={{ display: "flex", gap: "16px" }} className="hide-mobile">
@@ -1261,7 +1257,7 @@ export default function AeroEliteCareers() {
               },
               {
                 img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBn9Krk44w5cvoOWCNxTuxqVXxkWw29jGGKz-2xnsNrguFAMeQY6W9nkcT3jSCekf9Fm0iKDZ-z8_PIwxkKi2BICy2F_1UWZUMkvIgoLrfQeKDtgLUv8h-1o__xy6IAfSGmVmfcUUpEyx0wwiL05R7m7pklai6OT1yZAgbX0mOAwuHB6mWG_usIJ4kgI_B-AOa75hFVTvVPiJKuIIHV5ORRBpiw9D4du-1VptHcjvLtQ5VuVzaEu-nW",
-                quote: "AeroElite doesn't just hire pilots; they invest in commanders. The training here is best-in-class.",
+                quote: "DVAVIATION doesn't just hire pilots; they invest in commanders. The training here is best-in-class.",
                 name: "CAPT. ROBERT VANCE • CHIEF PILOT",
                 initials: "RV",
                 accent: "linear-gradient(135deg, #0f172a 0%, #334155 100%)",
@@ -1557,7 +1553,7 @@ export default function AeroEliteCareers() {
               Ready for Takeoff?
             </h2>
             <p className="inter cta-band-copy">
-              Start your career journey with AeroElite today.
+              Start your career journey with DVAVIATION today.
             </p>
           </div>
           <button className="inter btn-hover cta-band-button">Apply as a Pilot</button>
