@@ -101,6 +101,15 @@ export default function AeroEliteCareers() {
         
         .hero-bg {
           animation: zoom 20s infinite alternate;
+          background-attachment: fixed;
+          background-size: cover;
+          background-position: center;
+        }
+        
+        @media (max-width: 768px) {
+          .hero-bg {
+            background-attachment: scroll;
+          }
         }
         
         .brass-gradient {
@@ -123,7 +132,7 @@ export default function AeroEliteCareers() {
         
         .nav-link { color: #c6c6cc; text-decoration: none; transition: color 0.2s; }
         .nav-link:hover { color: #c0c6da; }
-        
+
         .footer-link { color: #c6c6cc; text-decoration: none; transition: color 0.2s; }
         .footer-link:hover { color: #ebc079; }
         
@@ -138,6 +147,90 @@ export default function AeroEliteCareers() {
         
         .story-img { transition: transform 0.7s ease; }
         .story-img:hover { transform: scale(1.1); }
+
+        .hero-hiring-badge {
+          display: inline-flex;
+        }
+
+        .hero-cta-group {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 24px;
+          margin-bottom: 64px;
+        }
+
+        .hero-cta-btn {
+          padding: clamp(12px, 2vw, 16px) clamp(24px, 4vw, 32px);
+          border-radius: 9999px;
+          font-size: clamp(14px, 2vw, 16px);
+          font-weight: 500;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          min-height: clamp(44px, 10vw, 56px);
+          white-space: nowrap;
+        }
+
+        .hero-cta-primary {
+          background-color: #ebc079;
+          color: #422c00;
+          border: none;
+        }
+
+        .hero-cta-secondary {
+          border: 1px solid white;
+          color: white;
+          background: transparent;
+          transition: background-color 0.2s, color 0.2s;
+        }
+
+        .cta-band {
+          padding: 96px 0;
+          color: #422c00;
+        }
+
+        .cta-band-inner {
+          max-width: 1280px;
+          margin: 0 auto;
+          padding-left: clamp(20px, 5vw, 64px);
+          padding-right: clamp(20px, 5vw, 64px);
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          gap: 48px;
+        }
+
+        .cta-band-copy {
+          font-size: 20px;
+          font-weight: 500;
+          opacity: 0.8;
+          max-width: 560px;
+        }
+
+        .cta-band-button {
+          padding: clamp(14px, 2vw, 20px) clamp(24px, 4vw, 40px);
+          background-color: #070B14;
+          color: white;
+          border-radius: 9999px;
+          font-size: clamp(14px, 2vw, 16px);
+          font-weight: 500;
+          border: none;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          white-space: nowrap;
+        }
+
+        @media (min-width: 1024px) {
+          .cta-band-button {
+            padding: 16px 48px;
+            font-size: 17px;
+          }
+        }
 
         .testimonial-grid {
           display: grid;
@@ -169,7 +262,20 @@ export default function AeroEliteCareers() {
         @media (min-width: 769px) {
           .hero-h1 { font-size: 64px; line-height: 72px; }
           .section-h2 { font-size: 48px; line-height: 56px; }
-          .hide-mobile { display: flex !important; }
+          .hero-content {
+            align-items: flex-start !important;
+          }
+          .hero-badge,
+          .hero-title,
+          .hero-cta-group,
+          .hero-trust-strip {
+            margin-left: 0 !important;
+            margin-right: auto !important;
+            text-align: left !important;
+          }
+          .hero-trust-strip {
+            justify-self: start;
+          }
           .timeline-desktop { display: flex; }
           .timeline-mobile { display: none; }
           .testimonial-grid {
@@ -180,7 +286,42 @@ export default function AeroEliteCareers() {
         @media (max-width: 768px) {
           .hero-h1 { font-size: 36px; line-height: 44px; }
           .section-h2 { font-size: 32px; line-height: 40px; }
-          .hide-mobile { display: none !important; }
+          .hero-hiring-badge {
+            display: none !important;
+          }
+          .hero-content {
+            align-items: center !important;
+            text-align: center;
+          }
+          .hero-title {
+            text-align: center !important;
+          }
+          .hero-cta-group {
+            gap: clamp(12px, 3vw, 14px);
+            margin-bottom: 48px;
+            width: 100%;
+          }
+          .hero-cta-btn {
+            width: 100%;
+            justify-content: center;
+            white-space: normal;
+          }
+          .cta-band {
+            padding: 72px 0;
+          }
+          .cta-band-inner {
+            gap: 28px;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+          }
+          .cta-band-copy {
+            font-size: 16px;
+            line-height: 1.6;
+          }
+          .cta-band-button {
+            width: 100%;
+          }
           .mobile-full { width: 100% !important; }
           .mobile-col { flex-direction: column !important; }
           .mobile-center { text-align: center !important; }
@@ -191,6 +332,12 @@ export default function AeroEliteCareers() {
         }
 
         @media (min-width: 769px) and (max-width: 1100px) {
+          .hero-cta-group {
+            gap: clamp(12px, 2vw, 16px);
+          }
+          .cta-band-inner {
+            gap: 32px;
+          }
           .testimonial-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
           }
@@ -217,7 +364,7 @@ export default function AeroEliteCareers() {
         <div
           style={{
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: "center",
             alignItems: "center",
             maxWidth: "1280px",
             margin: "0 auto",
@@ -228,72 +375,15 @@ export default function AeroEliteCareers() {
           <div
             className="playfair"
             style={{
-              fontSize: "32px",
-              lineHeight: "40px",
+              fontSize: "clamp(22px, 4vw, 32px)",
+              lineHeight: 1.1,
               color: "#c0c6da",
               fontWeight: 500,
               letterSpacing: "-0.02em",
+              textAlign: "center",
             }}
           >
             AeroElite Careers
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "32px",
-              fontSize: "16px",
-            }}
-            className="hide-mobile"
-          >
-            {["Pilots", "Flight Attendants", "Fleet", "About", "Contact"].map((item) => (
-              <a key={item} href="#" className="nav-link inter">
-                {item}
-              </a>
-            ))}
-          </div>
-
-          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-            <button
-              className="hide-mobile inter btn-hover"
-              style={{
-                padding: "8px 24px",
-                border: "1px solid #ebc079",
-                color: "#ebc079",
-                borderRadius: "9999px",
-                fontSize: "14px",
-                fontWeight: 500,
-                letterSpacing: "0.05em",
-                background: "transparent",
-                cursor: "pointer",
-                transition: "all 0.2s",
-              }}
-              onMouseEnter={(e) => {
-                (e.target as HTMLButtonElement).style.backgroundColor = "rgba(201, 161, 93, 0.15)";
-              }}
-              onMouseLeave={(e) => {
-                (e.target as HTMLButtonElement).style.backgroundColor = "transparent";
-              }}
-            >
-              Pilot Careers
-            </button>
-            <button
-              className="inter btn-hover"
-              style={{
-                padding: "8px 24px",
-                backgroundColor: "#ebc079",
-                color: "#422c00",
-                borderRadius: "9999px",
-                fontSize: "14px",
-                fontWeight: 500,
-                letterSpacing: "0.05em",
-                border: "none",
-                cursor: "pointer",
-              }}
-            >
-              Cabin Crew Careers
-            </button>
           </div>
         </div>
       </motion.nav>
@@ -317,6 +407,7 @@ export default function AeroEliteCareers() {
               backgroundImage: "url('/AviationHero.png')",
               backgroundSize: "cover",
               backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
               width: "100%",
               height: "100%",
             }}
@@ -331,6 +422,7 @@ export default function AeroEliteCareers() {
         </div>
 
         <div
+          className="hero-content"
           style={{
             position: "relative",
             zIndex: 10,
@@ -340,10 +432,13 @@ export default function AeroEliteCareers() {
             paddingRight: "clamp(20px, 5vw, 64px)",
             width: "100%",
             paddingTop: "80px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
           }}
         >
           <motion.div
-            className="inter"
+            className="inter hero-hiring-badge hero-badge"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -359,6 +454,7 @@ export default function AeroEliteCareers() {
               fontWeight: 600,
               letterSpacing: "0.1em",
               marginBottom: "32px",
+              alignSelf: "flex-start",
             }}
           >
             <span style={{ marginRight: "8px" }}>NOW HIRING</span> •{" "}
@@ -366,16 +462,18 @@ export default function AeroEliteCareers() {
           </motion.div>
 
           <motion.h1
-            className="playfair hero-h1"
+            className="playfair hero-h1 hero-title"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             style={{
               color: "white",
               marginBottom: "32px",
-              maxWidth: "768px",
+              maxWidth: "400px",
               fontWeight: 600,
               letterSpacing: "-0.02em",
+              textAlign: "left",
+              alignSelf: "flex-start",
             }}
           >
             Your Career{" "}
@@ -389,55 +487,28 @@ export default function AeroEliteCareers() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "24px",
-              marginBottom: "64px",
-            }}
+            className="hero-cta-group hero-cta-group"
+            style={{ alignSelf: "flex-start", width: "auto" }}
           >
             <button
-              className="inter btn-hover"
-              style={{
-                padding: "16px 32px",
-                backgroundColor: "#ebc079",
-                color: "#422c00",
-                borderRadius: "9999px",
-                fontSize: "16px",
-                fontWeight: 500,
-                border: "none",
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-              }}
+              className="inter btn-hover hero-cta-btn hero-cta-primary"
+              style={{ transition: "all 0.2s ease" }}
             >
-              Apply as a Pilot <span>→</span>
+              <span style={{ display: "inline" }}>Apply as a Pilot</span> <span style={{ display: "inline" }}>→</span>
             </button>
             <button
-              className="inter"
-              style={{
-                padding: "16px 32px",
-                border: "1px solid white",
-                color: "white",
-                borderRadius: "9999px",
-                fontSize: "16px",
-                fontWeight: 500,
-                background: "transparent",
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                transition: "background-color 0.2s",
-              }}
+              className="inter hero-cta-btn hero-cta-secondary"
+              style={{ transition: "all 0.2s ease" }}
               onMouseEnter={(e) => {
                 (e.currentTarget as HTMLButtonElement).style.backgroundColor = "rgba(255,255,255,0.1)";
+                (e.currentTarget as HTMLButtonElement).style.color = "white";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
+                (e.currentTarget as HTMLButtonElement).style.color = "white";
               }}
             >
-              Apply as Flight Attendant <span>→</span>
+              <span style={{ display: "inline" }}>Apply as Flight Attendant</span> <span style={{ display: "inline" }}>→</span>
             </button>
           </motion.div>
 
@@ -446,15 +517,19 @@ export default function AeroEliteCareers() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
+            className="hero-trust-strip"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
-              gap: "32px",
-              padding: "32px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(90px, 1fr))",
+              gap: "clamp(16px, 3vw, 32px)",
+              padding: "clamp(20px, 4vw, 32px)",
               borderTop: "1px solid rgba(255,255,255,0.1)",
               backdropFilter: "blur(12px)",
               backgroundColor: "rgba(255,255,255,0.05)",
               borderRadius: "24px",
+              width: "100%",
+              marginTop: "clamp(32px, 5vw, 48px)",
+              alignSelf: "flex-start",
             }}
           >
             {[
@@ -463,10 +538,10 @@ export default function AeroEliteCareers() {
               { value: "98%", label: "Retention Rate" },
               { value: "6-Week", label: "Hiring Process" },
             ].map((item) => (
-              <div key={item.label} style={{ display: "flex", flexDirection: "column" }}>
+              <div key={item.label} style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
                 <span
                   className="playfair"
-                  style={{ color: "#ebc079", fontSize: "24px", lineHeight: "32px", fontWeight: 500 }}
+                  style={{ color: "#ebc079", fontSize: "clamp(16px, 3vw, 24px)", lineHeight: "1.1", fontWeight: 500 }}
                 >
                   {item.value}
                 </span>
@@ -474,10 +549,12 @@ export default function AeroEliteCareers() {
                   className="inter"
                   style={{
                     color: "#c6c6cc",
-                    fontSize: "12px",
+                    fontSize: "clamp(9px, 1.5vw, 12px)",
                     fontWeight: 600,
-                    letterSpacing: "0.1em",
+                    letterSpacing: "0.05em",
                     textTransform: "uppercase",
+                    lineHeight: "1.1",
+                    wordBreak: "break-word",
                   }}
                 >
                   {item.label}
@@ -548,6 +625,7 @@ export default function AeroEliteCareers() {
                     backgroundImage: "url('/AviationHero.png')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
                     width: "100%",
                     height: "100%",
                     opacity: 0.6,
@@ -584,11 +662,11 @@ export default function AeroEliteCareers() {
                   className="inter"
                   style={{
                     width: "100%",
-                    padding: "16px",
+                    padding: "clamp(12px, 2vw, 16px)",
                     backgroundColor: "#ebc079",
                     color: "#422c00",
                     borderRadius: "9999px",
-                    fontSize: "14px",
+                    fontSize: "clamp(13px, 2vw, 14px)",
                     fontWeight: 500,
                     border: "none",
                     cursor: "pointer",
@@ -649,6 +727,7 @@ export default function AeroEliteCareers() {
                     backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfwgV79I842HugfrMMTlDY_V37Qub4i_fIVaLN7Ji8cZAczFNbhcOED_580E7rOQXyGGw1a3ANE6LbDMoqaAGoixhbMRSADpFIe2ofqLUkwG9vonKPI-sVDACzLkcuVFhgOxI7EKGDU17-LD8zRKkSxe12JMuXUI7knQG7IgvLGuNOfMeJ7607gebMxk8zB7v8VGOlZV2QGQIQSCjhTSuWCBuiTMnlMtoXbEyl7wDUCWqdu_2_ZsY2')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
                     width: "100%",
                     height: "100%",
                     opacity: 0.6,
@@ -689,11 +768,11 @@ export default function AeroEliteCareers() {
                   className="inter"
                   style={{
                     width: "100%",
-                    padding: "16px",
+                    padding: "clamp(12px, 2vw, 16px)",
                     backgroundColor: "#070B14",
                     color: "white",
                     borderRadius: "9999px",
-                    fontSize: "14px",
+                    fontSize: "clamp(13px, 2vw, 14px)",
                     fontWeight: 500,
                     border: "none",
                     cursor: "pointer",
@@ -877,6 +956,7 @@ export default function AeroEliteCareers() {
                       backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCuPwwgFOsS5o3KQLx7fDLeyyLdgilrvG15uJRI4Cw37-ArZkT_zmNsB2_I8ujh-kmi6qnvbYqhtx65sjrpMzVDzcMnklhlj6GpUTYeLu41LzGFzmXbm734q81IQw9ePTWXADoabWylkS517MObeD0Hf5ks5JB5TBlLiig1qcBpo5_CTa4UYguKtdykYtZPDhPVrzv4DikMAAxpUiZmdgJuVb-byImWaLQVWJ7uaxaxnyxJZZfpVKQI')",
                       backgroundSize: "cover",
                       backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
                       aspectRatio: "4/3",
                       width: "100%",
                     }}
@@ -982,6 +1062,7 @@ export default function AeroEliteCareers() {
                       backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCudf8ZKjJe0nryn0K3nMiYra7ArajXrjjVdfg9WqPDkfgX8lC1k1YSRrY0kdnqZttcN0gx_Sx0ISgN5gAjh9NFCyps_Tm-jqwOa3pCUN-TbXSayrGUS45fVxV2nIppQzMrDWeoqdgyx5qTiTS504Z8ZFHdRugIlfi4lUdkta2Q-2mreoO_IVPv76r471MyZnkIbgItEVdSd-kITUN_Q4FaIQjj7tqnDtDa4RzxIv8VbwUQEsEN9305')",
                       backgroundSize: "cover",
                       backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
                       aspectRatio: "4/3",
                       width: "100%",
                     }}
@@ -1001,6 +1082,8 @@ export default function AeroEliteCareers() {
               backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDr5oc5vUYIpWqm6kBFSbdQ3QbGuY69cXnzQXScPqwWyqTCgP2b8Xu4Uqu0BMyald24Qq-WP1lS9D43l-LUVnyLd7IGdhci0pZIslqMgCG9DnoKPNKLrGkkrht86ZEOMdos_coQLqe7oXmvhd5qJWUGnfyVxFiF9R8tWVYsHe-nXfeHmQhr6av6w9bxCRH378zHm4ql-HU2a_mqm5bk_xsm4PL1ckCybJQ2IqGd5sQGjuChukcLQF58')",
               backgroundSize: "cover",
               backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundAttachment: "fixed",
               width: "100%",
               height: "100%",
             }}
@@ -1051,10 +1134,10 @@ export default function AeroEliteCareers() {
           <button
             className="inter"
             style={{
-              padding: "16px 40px",
+              padding: "clamp(12px, 2vw, 16px) clamp(24px, 4vw, 40px)",
               border: "1px solid rgba(255,255,255,0.3)",
               borderRadius: "9999px",
-              fontSize: "14px",
+              fontSize: "clamp(13px, 2vw, 14px)",
               fontWeight: 500,
               letterSpacing: "0.05em",
               backgroundColor: "transparent",
@@ -1129,13 +1212,14 @@ export default function AeroEliteCareers() {
                 <button
                   key={icon}
                   style={{
-                    padding: "16px",
+                    padding: "clamp(12px, 2vw, 16px)",
                     border: "1px solid #422c00",
                     borderRadius: "9999px",
                     backgroundColor: "rgba(66, 44, 0, 0.3)",
                     cursor: "pointer",
                     transition: "all 0.2s",
                     color: "#422c00",
+                    fontSize: "clamp(16px, 2vw, 20px)",
                   }}
                   onMouseEnter={(e) => {
                     (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#422c00";
@@ -1457,23 +1541,13 @@ export default function AeroEliteCareers() {
       </section>
 
       {/* Final CTA Band */}
-      <section className="brass-gradient" style={{ padding: "96px 0", color: "#422c00" }}>
+      <section className="brass-gradient cta-band">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeUp}
-          style={{
-            maxWidth: "1280px",
-            margin: "0 auto",
-            paddingLeft: "clamp(20px, 5vw, 64px)",
-            paddingRight: "clamp(20px, 5vw, 64px)",
-            display: "flex",
-            flexWrap: "wrap",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: "48px",
-          }}
+          className="cta-band-inner"
         >
           <div>
             <h2
@@ -1482,201 +1556,13 @@ export default function AeroEliteCareers() {
             >
               Ready for Takeoff?
             </h2>
-            <p className="inter" style={{ fontSize: "20px", fontWeight: 500, opacity: 0.8 }}>
+            <p className="inter cta-band-copy">
               Start your career journey with AeroElite today.
             </p>
           </div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "16px" }}>
-            <button
-              className="inter btn-hover"
-              style={{
-                padding: "20px 40px",
-                backgroundColor: "#070B14",
-                color: "white",
-                borderRadius: "9999px",
-                fontSize: "16px",
-                fontWeight: 500,
-                border: "none",
-                cursor: "pointer",
-              }}
-            >
-              Apply as a Pilot
-            </button>
-            <button
-              className="inter"
-              style={{
-                padding: "20px 40px",
-                border: "2px solid #070B14",
-                color: "#070B14",
-                borderRadius: "9999px",
-                fontSize: "16px",
-                fontWeight: 500,
-                backgroundColor: "transparent",
-                cursor: "pointer",
-                transition: "all 0.2s",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.backgroundColor = "#070B14";
-                (e.currentTarget as HTMLButtonElement).style.color = "white";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent";
-                (e.currentTarget as HTMLButtonElement).style.color = "#070B14";
-              }}
-            >
-              Apply as Flight Attendant
-            </button>
-          </div>
+          <button className="inter btn-hover cta-band-button">Apply as a Pilot</button>
         </motion.div>
       </section>
-
-      {/* Footer */}
-      <footer style={{ backgroundColor: "#070B14", paddingTop: "96px", paddingBottom: "48px", color: "#c6c6cc" }}>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={fadeUp}
-          style={{
-            maxWidth: "1280px",
-            margin: "0 auto",
-            paddingLeft: "clamp(20px, 5vw, 64px)",
-            paddingRight: "clamp(20px, 5vw, 64px)",
-          }}
-        >
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
-              gap: "24px",
-              marginBottom: "80px",
-            }}
-          >
-            <div style={{ gridColumn: "span 1" }}>
-              <div
-                className="playfair"
-                style={{ fontSize: "32px", color: "#c0c6da", fontWeight: 500, marginBottom: "32px" }}
-              >
-                AeroElite
-              </div>
-              <p className="inter" style={{ fontSize: "14px", maxWidth: "280px", marginBottom: "32px" }}>
-                Setting the global standard for luxury aviation and professional career excellence since 2004.
-              </p>
-              <div style={{ display: "flex", gap: "16px" }}>
-                {["public", "photo_camera", "work"].map((icon) => (
-                  <a key={icon} href="#" className="social-btn">
-                    <span className="material-symbols-outlined" style={{ fontSize: "18px" }}>
-                      {icon}
-                    </span>
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h5
-                className="inter"
-                style={{
-                  color: "white",
-                  fontSize: "12px",
-                  fontWeight: 600,
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  marginBottom: "32px",
-                }}
-              >
-                OPPORTUNITIES
-              </h5>
-              <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "16px" }}>
-                {["Pilot Careers", "Cabin Crew", "Maintenance", "Corporate"].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="footer-link inter" style={{ fontSize: "14px" }}>
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h5
-                className="inter"
-                style={{
-                  color: "white",
-                  fontSize: "12px",
-                  fontWeight: 600,
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  marginBottom: "32px",
-                }}
-              >
-                COMPANY
-              </h5>
-              <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "16px" }}>
-                {["About Us", "Our Fleet", "Values", "Culture"].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="footer-link inter" style={{ fontSize: "14px" }}>
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h5
-                className="inter"
-                style={{
-                  color: "white",
-                  fontSize: "12px",
-                  fontWeight: 600,
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  marginBottom: "32px",
-                }}
-              >
-                RESOURCES
-              </h5>
-              <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "16px" }}>
-                {["Training Center", "Safety", "Contact Us", "Privacy Policy"].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="footer-link inter" style={{ fontSize: "14px" }}>
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div
-            style={{
-              paddingTop: "32px",
-              borderTop: "1px solid rgba(255,255,255,0.05)",
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: "16px",
-              fontSize: "12px",
-              fontWeight: 600,
-              letterSpacing: "0.1em",
-              opacity: 0.6,
-              textTransform: "uppercase",
-            }}
-            className="inter"
-          >
-            <div>© 2024 AEROELITE AVIATION. ALL RIGHTS RESERVED.</div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "32px" }}>
-              {["TERMS OF SERVICE", "DIVERSITY & INCLUSION", "GLOBAL OFFICES"].map((item) => (
-                <a key={item} href="#" style={{ color: "#c6c6cc", textDecoration: "none" }}>
-                  {item}
-                </a>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-      </footer>
     </div>
   );
 }
