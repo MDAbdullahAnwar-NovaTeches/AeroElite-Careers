@@ -314,7 +314,7 @@ export default function AeroEliteCareers() {
           <div
             className="hero-bg"
             style={{
-              backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9muKJ6yQC1wqYspxArL2knyLuSAbfHY28mUvhTJ_O1g9Ul6tZgdw6qyIF8_1uDo5TVQ1zpCP_Gkzd2FSBmSrZLUc-qzpo8Na1VknwEvDQxMVm3UuZUD19N5uK-c1naWwNvVAvwosYImnKUFfvS9x3_SuPhwPBYjZ81g1FSSvwTum8WVTy4blXLVAf4fpnV22vnV_nsEeD1WYGQYX9S6U1cHtRwn6elcFBqlWkBdn12xWd5PgXFg20')",
+              backgroundImage: "url('/AviationHero.png')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               width: "100%",
@@ -545,7 +545,7 @@ export default function AeroEliteCareers() {
                 <div
                   className="story-img"
                   style={{
-                    backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCykhIviVnLO9s76Zmxd5b42jg-_sEGwDY4-sAdvIGPOalTNBRhhxkP5g6AGSm89_0E1fwRWe8da9XaHAKYhs_onZCv8M8Z8y_8gBOaEU0rUyMqcvsVLHjwIY6Z69S7KeWUvzZesqNHe8W5hiUx8sxrTunfrhH0mQCjUHQ17I7BwEAVkCUYYcnqLbeIrJsy8nQVbEZ0YR4U9dmMsjy6-Dpp9yhPhX3BLiI6_UYZLYCmIiKfJmQr4r7n')",
+                    backgroundImage: "url('/AviationHero.png')",
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     width: "100%",
