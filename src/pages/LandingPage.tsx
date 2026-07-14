@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 // Animation Variants
 const fadeUp = {
@@ -35,6 +35,9 @@ const staggerContainer = {
 
 export default function AeroEliteCareers() {
   const navRef = useRef<HTMLElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const { scrollY } = useScroll();
+  const heroY = useTransform(scrollY, [0, 600], [0, 200]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -386,6 +389,7 @@ export default function AeroEliteCareers() {
 
       {/* Hero Section */}
       <header
+        ref={heroRef}
         style={{
           position: "relative",
           height: "100vh",
@@ -396,7 +400,7 @@ export default function AeroEliteCareers() {
           minHeight: "600px",
         }}
       >
-        <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
+        <motion.div style={{ position: "absolute", inset: 0, zIndex: 0, y: heroY }}>
           <div
             className="hero-bg"
             style={{
@@ -415,7 +419,7 @@ export default function AeroEliteCareers() {
               background: "linear-gradient(to right, #070B14 0%, rgba(7,11,20,0.4) 50%, transparent 100%)",
             }}
           />
-        </div>
+        </motion.div>
 
         <div
           className="hero-content"
