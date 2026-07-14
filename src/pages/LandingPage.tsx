@@ -627,10 +627,24 @@ export default function AeroEliteCareers() {
                 color: "#070B14",
                 boxShadow: "0 25px 50px rgba(0,0,0,0.15)",
               }}
+              onMouseEnter={(e) => {
+                const img = (e.currentTarget as HTMLDivElement).querySelector(".flight-attendant-img") as HTMLElement;
+                if (img) {
+                  img.style.opacity = "1";
+                  img.style.filter = "brightness(1)";
+                }
+              }}
+              onMouseLeave={(e) => {
+                const img = (e.currentTarget as HTMLDivElement).querySelector(".flight-attendant-img") as HTMLElement;
+                if (img) {
+                  img.style.opacity = "0.6";
+                  img.style.filter = "brightness(0.8)";
+                }
+              }}
             >
               <div style={{ position: "absolute", inset: 0, zIndex: 0, overflow: "hidden" }}>
                 <div
-                  className="story-img"
+                  className="story-img flight-attendant-img"
                   style={{
                     backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBfwgV79I842HugfrMMTlDY_V37Qub4i_fIVaLN7Ji8cZAczFNbhcOED_580E7rOQXyGGw1a3ANE6LbDMoqaAGoixhbMRSADpFIe2ofqLUkwG9vonKPI-sVDACzLkcuVFhgOxI7EKGDU17-LD8zRKkSxe12JMuXUI7knQG7IgvLGuNOfMeJ7607gebMxk8zB7v8VGOlZV2QGQIQSCjhTSuWCBuiTMnlMtoXbEyl7wDUCWqdu_2_ZsY2')",
                     backgroundSize: "cover",
@@ -638,6 +652,8 @@ export default function AeroEliteCareers() {
                     width: "100%",
                     height: "100%",
                     opacity: 0.6,
+                    filter: "brightness(0.8)",
+                    transition: "opacity 0.4s ease, filter 0.4s ease",
                   }}
                 />
                 <div
@@ -645,7 +661,9 @@ export default function AeroEliteCareers() {
                     position: "absolute",
                     inset: 0,
                     background: "linear-gradient(to top, #F7F3EA 0%, rgba(247,243,234,0.2) 50%, transparent 100%)",
+                    transition: "background 0.4s ease",
                   }}
+                  className="flight-attendant-overlay"
                 />
               </div>
               <div style={{ position: "relative", zIndex: 10 }}>
